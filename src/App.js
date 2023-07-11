@@ -57,7 +57,7 @@ export default class App extends Component {
             completed: false
         }
 
-        this.setState({todoData: [...this.state.todoData, newToDo]})
+        this.setState({todoData: [...this.state.todoData, newToDo], value: ""})
     }
 
     render() {
