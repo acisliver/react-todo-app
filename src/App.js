@@ -1,30 +1,12 @@
 import { useState } from 'react';
 import "./App.css";
 import List from "./components/List";
+import Form from "./components/Form";
 
 export default function App() {
 
     const [todoData, setTodoData] = useState([]);
     const [value, setValue] = useState("");
-
-    const handleChange = (e) => {
-        console.log('e', e.target.value);
-        setValue(e.target.value);
-    }
-
-    const handleSubmit = (e) => {
-        // form 안에 submit 기본 이벤트 페이지 리로드 막기
-        e.preventDefault();
-
-        let newToDo = {
-            id: Date.now(),
-            title: value,
-            completed: false
-        }
-
-        setTodoData(prev => [...prev, newToDo]);
-        setValue("");
-    }
 
         return (
             <div className="conatiner">
@@ -32,23 +14,8 @@ export default function App() {
                     <div className="title">
                         <h1>할 일 목록</h1>
                     </div>
-                    <List todoData={todoData} setTodoData={setTodoData}/>
-                    <form style={{display: 'flex'}} onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            name="value"
-                            style={{flex: "10", padding: "5px"}}
-                            placeholder="해야 할 일을 입력하세요."
-                            value={value}
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="submit"
-                            value="입력"
-                            className="btn"
-                            style={{flex: '1'}}
-                        />
-                    </form>
+                    <List todoData={ todoData } setTodoData={ setTodoData } />
+                    <Form value = { value } setValue={ setValue } setTodoData={ setTodoData }/>
                 </div>
             </div>
         )
