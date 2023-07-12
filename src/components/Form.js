@@ -1,6 +1,9 @@
-import React from 'react'
+import {useState} from 'react'
 
-export default function Form({ value, setValue, setTodoData }) {
+export default function Form({ setTodoData }) {
+
+    const [value, setValue] = useState("");
+
     const handleChange = (e) => {
         console.log('e', e.target.value);
         setValue(e.target.value);

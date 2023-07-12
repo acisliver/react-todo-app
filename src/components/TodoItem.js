@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function TodoItem({id, title, completed, todoData, setTodoData, provided, snapshot}) {
+const TodoItem = React.memo(({id, title, completed, todoData, setTodoData, provided, snapshot}) => {
 
     const handleClick = (id) => {
         let newTodoData = todoData.filter(data => data.id !== id);
@@ -40,4 +40,6 @@ export default function TodoItem({id, title, completed, todoData, setTodoData, p
             </div>
         </div>
     )
-}
+})
+
+export default TodoItem;

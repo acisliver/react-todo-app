@@ -5,17 +5,7 @@ import Form from "./components/Form";
 
 export default function App() {
 
-    const [todoData, setTodoData] = useState([{
-        id: 1,
-        title: "공부하기",
-        completed: false
-    }, {
-        id: 2,
-        title: "청소하기",
-        completed: false
-    }
-    ]);
-    const [value, setValue] = useState("");
+    const [todoData, setTodoData] = useState([]);
 
     return (
         <div className="flex items-center justify-center w-screen h-screen bg-blue-100">
@@ -24,7 +14,7 @@ export default function App() {
                     <h1>할 일 목록</h1>
                 </div>
                 <List todoData={todoData} setTodoData={setTodoData}/>
-                <Form value={value} setValue={setValue} setTodoData={setTodoData}/>
+                <Form setTodoData={setTodoData}/>
             </div>
         </div>
     )
