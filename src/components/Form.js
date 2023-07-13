@@ -5,7 +5,6 @@ export default function Form({ setTodoData }) {
     const [value, setValue] = useState("");
 
     const handleChange = (e) => {
-        console.log('e', e.target.value);
         setValue(e.target.value);
     }
 
