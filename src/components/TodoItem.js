@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {data} from "autoprefixer";
 
 const TodoItem = React.memo((
     {
@@ -48,7 +47,6 @@ const TodoItem = React.memo((
     if (isEditing) {
         return (
             <div
-
                 className={`flex items-center justify-between w-full px-4 py-1 my-2 text-gray-600 bg-gray-100 border rounded`}
             >
                 <div className="items-center">
@@ -105,8 +103,6 @@ const TodoItem = React.memo((
             </div>
         )
     }
-
-
 })
 
 export default TodoItem;
