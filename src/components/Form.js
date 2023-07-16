@@ -12,6 +12,10 @@ export default function Form({ setTodoData }) {
         // form 안에 submit 기본 이벤트 페이지 리로드 막기
         e.preventDefault();
 
+        if (value.trim() === "") {
+            return;
+        }
+
         let newToDo = {
             id: Date.now(),
             title: value,
